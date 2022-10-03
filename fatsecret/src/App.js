@@ -1,17 +1,17 @@
 import Navbar from './Comp/Navbar';
 import AllRoutes from './Pages.jsx/AllRoutes';
 import { Box, Image } from '@chakra-ui/react';
+import Footer from './Comp/Footer'
 
 function App() {
   return (
-    <Box className="App" border="5px solid black" fit="cover" minW={{base:"200vw",sm:"100vw",md:"100vw",lg:"100vw", xl: '100vw'}}>
-    < Image src='https://a.ftscrt.com/static/images/splash/Sunrise_BG_01.jpg' alt='fatscbg' pos="fixed" top="0px" zIndex={-10} />
+    <Box className="App" fit="cover" overflow="hidden" minW={{base:"100vw",sm:"100vw",md:"100vw",lg:"100vw", xl: '100vw'}}>
     <Navbar/>
-    <AllRoutes/> 
+    <AllRoutes/>
+    <Footer/> 
     </Box>
   );
 }
 
 export default App;
 
-// w={{base:"50vw",sm:"50vw",md:"50vw",lg:"50vw", xl: '50vw'}}

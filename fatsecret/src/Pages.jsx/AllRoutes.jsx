@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 import {Routes,Route} from "react-router-dom"
 import Community from './Community'
@@ -5,18 +6,38 @@ import Fitness from './Fitness'
 import Foods from './Foods'
 import Landing from './Landing'
 import Recipes from './Recipes'
+import Signin from './Signin'
+import PrivateRoute from '../Comp/PrivateRoute'
 
 const AllRoutes = () => {
   return (
-    <div>
+    <Box pt="50px">
       <Routes>
         <Route path="/" element={<Landing/>} />
-        <Route path="/Foods" element={<Foods/>} />
-        <Route path="/Fitness" element={<Fitness/>}/>
-        <Route path="/Recipes" element={<Recipes/>}/>
-        <Route path="/Community" element={<Community/>}/>
+        <Route path="/Foods" element={
+          <PrivateRoute>
+              <Foods/>
+          </PrivateRoute>
+        } />
+        <Route path="/Fitness" element={
+          <PrivateRoute>
+          <Fitness/>
+        </PrivateRoute> 
+        }/>
+        <Route path="/Recipes" element={
+          <PrivateRoute>
+          <Recipes/>
+        </PrivateRoute> 
+        }/>
+        <Route path="/Community" element={
+          <PrivateRoute>
+          <Community/>
+          </PrivateRoute> 
+        
+        }/>
+        <Route path="/Signin" element={<Signin/>}/>
       </Routes>
-    </div>
+    </Box>
   )
 }
 
