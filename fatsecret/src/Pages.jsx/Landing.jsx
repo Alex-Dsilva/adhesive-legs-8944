@@ -4,34 +4,28 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDisclosure } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import img from "../assets/fit.jpg"
 
 const Landing = () => {
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-  useEffect(()=>{
-    onOpen()
-  },[])
   
 
 
   return (
     <Box>
 
-
-
       <Box>
-            < Image src='https://a.ftscrt.com/static/images/splash/Sunrise_BG_01.jpg' alt='fatscbg' pos="fixed" top="0px" zIndex={-100} h="100%" w="100%"/>
+            < Image src='https://a.ftscrt.com/static/images/splash/Sunrise_BG_01.jpg' alt='fatscbg' pos="fixed" top="0px" zIndex={-100} h="100%"/>
       </Box>
 
 
-      <Box p="50px" pt="50px" display="flex" flexDir="column" gap="30px">
+      <Box pl="40px" pt="50px" display="flex" flexDir="column" gap="30px">
         <Text textShadow='1px 1px black'  fontWeight="500" color="whiteAlpha.900" fontSize='46px'>Your Key to Success</Text>
         <Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" w="45%" h={{base:"40px",sm:"50px",md:"85px",lg:"95px", xl: '95px'}} alt="Fatsecret_logo"/>
         <Box as='button' bg="green.500" fontWeight="500" color="whiteAlpha.900" _hover={{bg:"green.600"}} fontSize='22px' w={{base:"30%",sm:"23%",md:"18%",lg:"18%", xl: '18%'}}  h="10" textShadow='0.5px 1px black' >Start for Free</Box>
         <Text color="#fff" textShadow='2px 2px black' fontSize='18px' fontWeight="500" >Already a member? <Text as='ins' ><Link to="/Signin">Sign in</Link></Text></Text>
-        <Text fontSize='18px' textShadow='2px 2px black' color='#fff' fontWeight="500" w="50%">Start losing weight the healthy way with easy to use apps, online tools and support.</Text>
-        <Box display='flex' m="auto">
+        <Text color="#000" fontSize="17px" fontWeight="500">Start losing weight the healthy way with easy to use apps, online tools and support.</Text>
+        <Box display='flex' m="auto" pb="50px">
           <Image src='https://static.fatsecret.com/static/images/mobi/ios/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' alt='appstore'/>
           <Image src='https://a.ftscrt.com/static/images/mobi/android/en_get_2.svg' alt='playstore'/>
         </Box>
@@ -72,11 +66,11 @@ const Landing = () => {
 
 
 
-      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'60% 40%',xl:'repeat(2, 1fr)'}} bg='#32B34C' p='2%'>
-          <GridItem p='10' pt='100px' display='flex' flexDir='column' alignItems="center" justifyContent="center">
+      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'60% 40%',xl:'repeat(2, 1fr)'}} bg='#32B34C' >
+          <GridItem  pt='100px' display='flex' flexDir='column' alignItems="center" justifyContent="center">
             <Text fontSize='2xl' fontWeight='700' color='whiteAlpha.800'>All the tools to achieve your diet goals.</Text>
             <br/>
-            <Grid  templateColumns='repeat(2,1fr)' gap='10px' >
+            <Grid  templateColumns='repeat(2,1fr)' >
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
@@ -85,7 +79,7 @@ const Landing = () => {
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
             </Grid>
           </GridItem>
-          <GridItem><Image h='100%' src='https://nitrocut-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/How-to-Plan-Your-Diet-Based-on-Your-Fitness-Goals.jpg'/></GridItem>
+          <GridItem><Image h='100%' src={img}/></GridItem>
       </Grid>
 
 
@@ -105,14 +99,6 @@ const Landing = () => {
 {/* Footer */}
 
      
-      <Modal  onClose={onClose} isOpen={isOpen}  >
-        <ModalContent maxW='100%' bottom='-385px' >
-          <ModalBody display='flex' flexDir={{base:'column',sm:"column",md:"row",lg:'row',xl:'row'}} gap={{base:'20px',sm:"20px",md:'350px',lg:'350px',xl:'350px'}} alignItems='center' justifyContent='center' bottom='0px'>
-          This website uses cookies to ensure you get the best experience on our website. Learn more                    
-         <Button colorScheme='teal'  onClick={onClose}>Close</Button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-          </ModalBody>
-        </ModalContent>
-      </Modal>
     </Box>
   )  
 }

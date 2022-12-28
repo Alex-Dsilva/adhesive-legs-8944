@@ -76,6 +76,7 @@ const Signin = () => {
       <Checkbox fontSize='xs' justifySelf='left'>Remember Me</Checkbox>
       <Text>Register Today! 100% free!</Text>
       <Text>Become a member! <Link href='https://www.fatsecret.co.in/Default.aspx?pa=p' isExternal>Create Account</Link></Text>
+      <Input placeholder='Enter Your Email' />
     </Flex>
 
     

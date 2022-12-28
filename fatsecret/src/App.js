@@ -5,7 +5,7 @@ import Footer from './Comp/Footer'
 
 function App() {
   return (
-    <Box className="App" fit="cover" overflow="hidden" minW={{base:"100vw",sm:"100vw",md:"100vw",lg:"100vw", xl: '100vw'}}>
+    <Box className="App" fit="cover" >
     <Navbar/>
     <AllRoutes/>
     <Footer/> 
