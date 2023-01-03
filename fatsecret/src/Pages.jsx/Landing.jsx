@@ -66,8 +66,8 @@ const Landing = () => {
       </Grid>
 
 
-      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'60% 40%',xl:'repeat(2, 1fr)'}} bg='#32B34C' p='2%' >
-          <GridItem  pt='100px' display='flex' flexDir='column' alignItems="flex-start" textAlign="center">
+      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'50% 50%',xl:'repeat(2, 1fr)'}} bg='#32B34C' p='2%' >
+          <GridItem display='flex' flexDir='column' alignItems="flex-start" textAlign="center">
             <Text fontSize='2xl' fontWeight='700' color='whiteAlpha.800'>All the tools to achieve your diet goals.</Text>
             <br/>
             <Grid  >
@@ -77,7 +77,7 @@ const Landing = () => {
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>RDI (Recommended Daily Intake) calculator </Text></GridItem>
             </Grid>
           </GridItem>
-          <GridItem><Image h='100%' borderTopRightRadius='35%' borderBottomLeftRadius='35%' src={img}/></GridItem>
+          <GridItem pt="20px"><Image h='100%' borderTopRightRadius='35%' borderBottomLeftRadius='35%' src={img}/></GridItem>
       </Grid>
 
 
@@ -93,10 +93,6 @@ const Landing = () => {
             </Grid>
           </Box>
       </Flex>
-
-{/* Footer */}
-
-     
     </Box>
   )  
 }
