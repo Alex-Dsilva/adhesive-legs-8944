@@ -1,7 +1,7 @@
-import { Box, Button, Flex, Grid, GridItem, Image, ListItem, Modal, ModalBody, ModalContent, Spacer, Text, UnorderedList } from '@chakra-ui/react'
+import { Link, Box, Button, Flex, Grid, GridItem, Image, ListItem, Modal, ModalBody, ModalContent, Spacer, Text, UnorderedList } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link as Reachlink } from 'react-router-dom'
 import { useDisclosure } from '@chakra-ui/react'
 import { useEffect } from 'react'
 import img from "../assets/fit.jpg"
@@ -19,15 +19,16 @@ const Landing = () => {
       </Box>
 
 
-      <Box pl="40px" pt="50px" display="flex" flexDir="column" gap="30px">
+      <Box pl="40px" pt="50px" display="flex" flexDir="column" gap="30px" h="100vh">
         <Text textShadow='1px 1px black'  fontWeight="500" color="whiteAlpha.900" fontSize='46px'>Your Key to Success</Text>
-        <Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" w="45%" h={{base:"40px",sm:"50px",md:"85px",lg:"95px", xl: '95px'}} alt="Fatsecret_logo"/>
+        <Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" w="40%" h={{base:"40px",sm:"50px",md:"85px",lg:"95px", xl: '95px'}} alt="Fatsecret_logo"/>
         <Box as='button' bg="green.500" fontWeight="500" color="whiteAlpha.900" _hover={{bg:"green.600"}} fontSize='22px' w={{base:"30%",sm:"23%",md:"18%",lg:"18%", xl: '18%'}}  h="10" textShadow='0.5px 1px black' >Start for Free</Box>
         <Text color="#fff" textShadow='2px 2px black' fontSize='18px' fontWeight="500" >Already a member? <Text as='ins' ><Link to="/Signin">Sign in</Link></Text></Text>
         <Text color="#000" fontSize="17px" fontWeight="500">Start losing weight the healthy way with easy to use apps, online tools and support.</Text>
         <Box display='flex' m="auto" pb="50px">
-          <Image src='https://static.fatsecret.com/static/images/mobi/ios/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' alt='appstore'/>
-          <Image src='https://a.ftscrt.com/static/images/mobi/android/en_get_2.svg' alt='playstore'/>
+          <Link href="https://itunes.apple.com/in/app/calorie-counter-by-fatsecret/id347184248?mt=8" target="_blank" ><Image src='https://static.fatsecret.com/static/images/mobi/ios/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' alt='appstore'/></Link>
+          <Link href="https://play.google.com/store/apps/details?id=com.fatsecret.android" target="_blank" ><Image src='https://a.ftscrt.com/static/images/mobi/android/en_get_2.svg' alt='playstore'/></Link>
+          <Image />
         </Box>
       </Box>
 
@@ -65,21 +66,18 @@ const Landing = () => {
       </Grid>
 
 
-
-      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'60% 40%',xl:'repeat(2, 1fr)'}} bg='#32B34C' >
-          <GridItem  pt='100px' display='flex' flexDir='column' alignItems="center" justifyContent="center">
+      <Grid templateColumns={{base:'1',sm:"1",md:"1",lg:'60% 40%',xl:'repeat(2, 1fr)'}} bg='#32B34C' p='2%' >
+          <GridItem  pt='100px' display='flex' flexDir='column' alignItems="flex-start" textAlign="center">
             <Text fontSize='2xl' fontWeight='700' color='whiteAlpha.800'>All the tools to achieve your diet goals.</Text>
             <br/>
-            <Grid  templateColumns='repeat(2,1fr)' >
+            <Grid  >
               <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
+              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>A large collection of healthy recipes for your diet</Text></GridItem>
+              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>Nutrition info for all foods, brands</Text></GridItem>
+              <GridItem display='flex' alignItems='center'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='15px' fontWeight='500'>RDI (Recommended Daily Intake) calculator </Text></GridItem>
             </Grid>
           </GridItem>
-          <GridItem><Image h='100%' src={img}/></GridItem>
+          <GridItem><Image h='100%' borderTopRightRadius='35%' borderBottomLeftRadius='35%' src={img}/></GridItem>
       </Grid>
 
 
@@ -90,8 +88,8 @@ const Landing = () => {
             <Text fontSize='25px' fontWeight='600' color='whiteAlpha.800'>The perfect application for keeping track of your food, exercise and weight while on-the-go</Text>
             <br/>
             <Grid  gap='10px'  >
-              <GridItem display='flex' alignItems='center'  color='whiteAlpha.800'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='16px' fontWeight='600'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
-              <GridItem display='flex' alignItems='center'  color='whiteAlpha.800'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='16px' fontWeight='600'>A FOOD DIARY To keep track of what you're eating.</Text></GridItem>
+              <GridItem display='flex' alignItems='center'  color='whiteAlpha.800'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='16px' fontWeight='600'>iPhone, iPod Touch and iPad</Text></GridItem>
+              <GridItem display='flex' alignItems='center'  color='whiteAlpha.800'><Image src='https://static.fatsecret.com/static/images/splash/Check_Tick.png' alt='tick'/><Text fontSize='16px' fontWeight='600'>Android Phones and Tablets</Text></GridItem>
             </Grid>
           </Box>
       </Flex>

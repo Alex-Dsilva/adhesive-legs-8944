@@ -32,11 +32,11 @@ console.log(data)
             .map((_, i) => (
               <StarIcon
                 key={i}
-                color={i < el.platform_specific.rating_value_for_money ? 'teal.500' : 'gray.300'}
+                color={i < el.rating ? 'teal.500' : 'gray.300'}
               />
             ))}
           <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-            {el.platform_specific.rating_recommendation_likelihood} reviews
+            {el.rating} reviews
           </Box>
         </Box>
           </Box>

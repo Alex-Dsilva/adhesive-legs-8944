@@ -24,7 +24,7 @@ export const reviews= [
     },
     {
     "platform": "capterra.com",
-    "rating": 1,
+    "rating": 4,
     "user_name": "Mehdi C.",
     "text": null,
     "title": null,
@@ -66,7 +66,7 @@ export const reviews= [
     },
     {
     "platform": "capterra.com",
-    "rating": 1,
+    "rating": 4,
     "user_name": "Stanislas C.",
     "text": null,
     "title": null,

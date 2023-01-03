@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
+import {Link, Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 
 const Footer = () => {
@@ -11,8 +11,8 @@ const Footer = () => {
         <Text fontSize='lg' color='#f0f8ff' >Get the app</Text>
 
         <Box display='flex' w='100%'  alignItems='center'  justifyContent='center' pt='5px' gap='20px'>
-          <Image src='https://static.fatsecret.com/static/images/mobi/ios/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' alt='appstore'/>
-          <Image src='https://a.ftscrt.com/static/images/mobi/android/en_get_2.svg' alt='playstore'/>
+          <Link href="https://itunes.apple.com/in/app/calorie-counter-by-fatsecret/id347184248?mt=8" target="_blank" ><Image src='https://static.fatsecret.com/static/images/mobi/ios/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' alt='appstore'/></Link>
+          <Link href="https://play.google.com/store/apps/details?id=com.fatsecret.android" target="_blank" ><Image src='https://a.ftscrt.com/static/images/mobi/android/en_get_2.svg' alt='playstore'/></Link>
         </Box>
       </Box>
       <Flex>
