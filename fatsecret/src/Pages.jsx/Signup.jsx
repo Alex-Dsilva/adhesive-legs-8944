@@ -10,9 +10,8 @@ import {AiFillFacebook, AiFillGoogleCircle} from 'react-icons/ai'
 import { app, db } from "../config/firebaseConfig"
 import {
   getAuth,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 const userLogin = ({data})=>{
@@ -22,7 +21,7 @@ const userLogin = ({data})=>{
     })
 }
 
-const Signin = () => {
+const Signup = () => {
 
   const auth = getAuth();
 
@@ -30,7 +29,6 @@ const Signin = () => {
     email:"",
    password:"",
   }
-  const Googleprovider = new GoogleAuthProvider();
   const [data,setData] = useState(inti)
 
   const value= useContext(AuthContext)
@@ -50,54 +48,37 @@ const Signin = () => {
       })
       console.log({data})
     }
-
-    const handleGooglelogin = () => {
-      value.dispatch(loginRequest("Processing"))
-      signInWithPopup(auth, Googleprovider)
-        .then((userCredential) => {
-          const { displayName, uid } = userCredential.user;
-          console.log(displayName, uid);
-          value.dispatch(loginSuccess(uid))
-        }).catch((err) => {
-        alert(err.message);
-        value.dispatch(loginFailure("error"));
-      });}
     
       const handleSubmit =(e) =>{
       e.preventDefault()
       value.dispatch(loginRequest("Processing"))
-      console.log(data)
-      signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((res) => {
+      if (data.name !== undefined || "") {
+        if (data.email !== undefined || "") {
+          // console.log("hi");
+          createUserWithEmailAndPassword(auth, data.email, data.password)
+            .then((res) => {
+              updateProfile(auth.currentUser, {
+                displayName: data.username,
+              })
           value.dispatch(loginSuccess(res.user.uid));
           console.log(res)
         })
         .catch((err) => {
           alert(err)
           value.dispatch(loginFailure("error"));
-        });
-      
-  
-    }
+        })}}}
+
   return (
     <Box>
 
     
     <Flex m="auto" direction="column" mt='10px' mb='15px' maxW="lg" justify="center" borderWidth='1px' p='50px' align="center" gap="20px">
-      <VStack>
-        <Button bg='blue.400' onClick={handleGooglelogin} color='whiteAlpha.900' leftIcon={<AiFillGoogleCircle />}>
-        Continue with Google
-        </Button>
-      </VStack>
-
-      <Text fontSize='md' fontWeight='bold'>or sign in with your FatSecret account</Text>
+      <Input htmlSize={40} width='auto' type="text" name="name" onChange={handlChange} placeholder='Enter Your name' />
       <Input htmlSize={40} width='auto' type="email" name="email" onChange={handlChange} placeholder='Enter Your Email' />
       <Input htmlSize={40} width='auto' type="password" name="password" onChange={handlChange} placeholder='Enter Your Password' />
       <Button onClick={handleSubmit} colorScheme='teal' variant='solid'> Submit</Button>
-      <Link href='https://www.fatsecret.co.in/Default.aspx?pa=p' isExternal>Forgot Password?</Link>
       <Checkbox fontSize='xs' justifySelf='left'>Remember Me</Checkbox>
-      <Text>Register Today! 100% free!</Text>
-      <Text>Become a member! <Link to="/Signup">Create Account</Link></Text>
+      <Link to="/Signin">SignIn </Link>
     </Flex>
 
     
@@ -105,4 +86,4 @@ const Signin = () => {
   );
 };
 
-export default Signin
+export default Signup

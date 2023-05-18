@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <Box display="flex"  gap="30px" p="10px" fontWeight="700" bg='green.300' alignItems='center' color="whiteAlpha.900" w='100%' pos="absolute"  top="0px" h="40px">
+    <Box display="flex"  gap="30px" p="10px" fontWeight="700" bg='green.300' alignItems='center' color="whiteAlpha.900" w='100%' pos="fixed"  top="0px" h="80px">
       <Link to="/" w={{base:"40%",sm:"30%" ,md:"15%" ,lg:"15%" , xl: "15%" }} overflow="hidden"><Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" h={{base:"30px",sm:"20px",md:"25px",lg:"30px", xl: '30px'}} alt="Fatsecret_logo"/></Link>
       <Box w={{base:"0px",sm:"65%",md:"65%",lg:"75%", xl: '75%'}} display={{base:"none",sm:"none",md:"flex",lg:"flex", xl: 'flex'}} alignItems="center" gap={{base:"10px",sm:"5px",md:"7px",lg:"40px", xl: '40px'}} pt="2px">
       <Link  to="/Foods">Foods</Link>

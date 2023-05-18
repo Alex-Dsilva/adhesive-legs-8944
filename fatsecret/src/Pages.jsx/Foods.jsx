@@ -60,7 +60,7 @@ const Foods = () => {
   console.log('val',val.recipe.label)
 
   return (
-    <Box>
+    <Box mt='6'>
         <Box  h='380px' bgImage='url("https://static.toiimg.com/thumb/msid-47442718,width-800,height-600,resizemode-75/47442718.jpg")' bgSize='cover' bgPosition="center">
        <Box p='10px' bg='rgba(0,0,0, 0.3)' h='100%' display='flex' flexDir='column' alignItems='center' justify='center' textAlign='center'  >
         <Text fontSize='4xl' pt='20px' letterSpacing='1px' textAlign='center'   fontWeight='600'>Search Your Todays Meal</Text>

@@ -18,7 +18,7 @@ console.log(data)
 
 
   return (
-    <Box>
+    <Box mt='8'>
       <Box textAlign='center'>
        <Text as='b' fontSize='3xl'  >Reviwes</Text> 
       {data.map((el)=>{

@@ -7,6 +7,7 @@ import Foods from './Foods'
 import Landing from './Landing'
 import Recipes from './Recipes'
 import Signin from './Signin'
+import Signup from './Signup'
 import PrivateRoute from '../Comp/PrivateRoute'
 
 const AllRoutes = () => {
@@ -36,6 +37,7 @@ const AllRoutes = () => {
         
         }/>
         <Route path="/Signin" element={<Signin/>}/>
+        <Route path="/Signup" element={<Signup/>}/>
       </Routes>
     </Box>
   )

@@ -58,7 +58,7 @@ const Recipes = () => {
   console.log('val',val.recipe.ingredients)
   // Search Recipes from a large collection
   return (
-    <Box>
+    <Box mt='6'>
     <Box  h='380px' bgImage='url("https://thumbs.dreamstime.com/z/set-different-food-products-light-background-vegetables-fruits-opposed-to-protein-carbohydrate-foods-space-text-flat-180704060.jpg")' bgSize='cover' bgPosition="center">
    <Box p='10px' bg='rgba(0,0,0, 0.4)' h='100%' display='flex' flexDir='column' alignItems='center' justify='center' textAlign='center'  >
     <Text fontSize='4xl' pt='20px' letterSpacing='1px' textAlign='center'   fontWeight='600'>Find Your Perfect Recipe</Text>
