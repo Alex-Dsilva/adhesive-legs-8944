@@ -19,9 +19,9 @@ const Landing = () => {
       </Box>
 
 
-      <Box pl="40px" pt="50px" display="flex" flexDir="column" gap="30px" h="100vh">
+      <Box pl="3rem" pt="5rem" display="flex" flexDir="column" gap="3.5rem" h="100vh">
         <Text textShadow='1px 1px black'  fontWeight="500" color="whiteAlpha.900" fontSize='46px'>Your Key to Success</Text>
-        <Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" w="40%" h={{base:"40px",sm:"50px",md:"85px",lg:"95px", xl: '95px'}} alt="Fatsecret_logo"/>
+        <Image src="https://static.fatsecret.com/static/images/splash/FS_Logo_SplashScreen.png" w="60%" h={{base:"40rem",sm:"20rem",md:"20rem",lg:"30rem", xl: '20rem'}} alt="Fatsecret_logo"/>
         <Box as='button' bg="green.500" fontWeight="500" color="whiteAlpha.900" _hover={{bg:"green.600"}} fontSize='22px' w={{base:"30%",sm:"23%",md:"18%",lg:"18%", xl: '18%'}}  h="10" textShadow='0.5px 1px black' >Start for Free</Box>
         <Text color="#fff" textShadow='2px 2px black' fontSize='18px' fontWeight="500" >Already a member? <Text as='ins' ><Link to="/Signin">Sign in</Link></Text></Text>
         <Text color="#000" fontSize="17px" fontWeight="500">Start losing weight the healthy way with easy to use apps, online tools and support.</Text>

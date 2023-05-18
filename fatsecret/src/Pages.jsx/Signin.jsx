@@ -7,16 +7,25 @@ import { Navigate} from 'react-router-dom'
 import { loginFailure, loginRequest, loginSuccess } from "../API/action"
 import {AuthContext} from "../API/AuthContext"
 import {AiFillFacebook, AiFillGoogleCircle} from 'react-icons/ai'
-
+import { app, db } from "../config/firebaseConfig"
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
 
 const userLogin = ({data})=>{
-  return axios.post ("https://reqres.in/api/login",{
+  return axios.post ("https://reqres.in/api/register",{
       email:data.email,
       password:data.password
     })
 }
 
 const Signin = () => {
+
+  const auth = getAuth();
+
   const inti ={
     email:"",
    password:"",
@@ -43,12 +52,14 @@ const Signin = () => {
     const handleSubmit =(e) =>{
       e.preventDefault()
       value.dispatch(loginRequest("Processing"))
-      userLogin({data})
+      console.log(data)
+      signInWithEmailAndPassword(auth, data.email, data.password)
       .then((res) => {
           value.dispatch(loginSuccess(res.token));
           console.log(res)
         })
         .catch((err) => {
+          alert(err)
           value.dispatch(loginFailure("error"));
         });
       
@@ -76,7 +87,6 @@ const Signin = () => {
       <Checkbox fontSize='xs' justifySelf='left'>Remember Me</Checkbox>
       <Text>Register Today! 100% free!</Text>
       <Text>Become a member! <Link href='https://www.fatsecret.co.in/Default.aspx?pa=p' isExternal>Create Account</Link></Text>
-      <Input placeholder='Enter Your Email' />
     </Flex>
 
     
